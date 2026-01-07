@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends - Afiq Aiman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES & THEMES --- */
+        :root {
+            --bg-overlay: rgba(0,0,0,0.6);
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --text-color: #333;
+            --accent-color: #6c8cd5;
+            --title-color: #1f3c88;
+            --footer-bg: #112240; /* Darker Navy for contrast */
+            --footer-text: #ccd6f6;
+        }
+
+        .light-mode {
+            --bg-overlay: rgba(255,255,255,0.4);
+            --card-bg: #ffffff;
+            --text-color: #111;
+            --accent-color: #1f3c88;
+            --title-color: #000;
+            --footer-bg: #dbe4ff;
+            --footer-text: #1f3c88;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
+                        url("image/para2.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .content {
+            max-width: 700px;
+            width: 90%;
+            margin: 40px auto;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: 0.4s;
+        }
+
+        h1, h2 { color: var(--title-color); margin-top: 0; }
+
+        img {
+            max-width: 100%;
+            height: auto; 
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .nav-container { text-align: center; margin-bottom: 80px; }
+
+        .back-btn {
+            text-decoration: none;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+        /* --- ADVANCED FOOTER STYLES --- */
+        footer {
+            width: 100%;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 50px 0 20px 0;
+            margin-top: auto;
+            transition: 0.4s;
+        }
+
+        .footer-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-col h3 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p { font-size: 0.9rem; line-height: 1.6; opacity: 0.8; }
+
+        .footer-links { list-style: none; padding: 0; }
+
+        .footer-links li { margin-bottom: 10px; }
+
+        .footer-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover { opacity: 1; color: var(--accent-color); padding-left: 5px; }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Light Mode</button>
+
+    <div class="content">
+        <h1>My Friends</h1>
+        <p>Friends are the family we choose, always by our side through all of life's situations.</p>
+    </div>
+
+    <section class="content">
+        <h2>JEBAT</h2>
+        <p>A circle of friends consisting of fellow students and companions.</p>
+        <img src="image/jebat.jpeg" alt="Jebat Group">
+    </section>
+
+    <section class="content">
+        <h2>ParaOnTop</h2>
+        <p>A friendship that transcends everything and reaches the top.</p>
+        <img src="image/para3.jpeg" alt="ParaOnTop Group">
+    </section>
+
+ <section class="content">
+        <h2>Team Gerai BATALION X</h2>
+        <p>Team Gerai is a group of individuals who work together efficiently to manage and operate a stall successfully.
+</p>
+        <img src="image/team_gerai.jpeg" alt="ParaOnTop Group">
+    </section>
+
+
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">⬅ Back to Main Menu</a>
+    </div>
+
+    <footer>
+      
+        <div class="footer-bottom">
+            &copy; 2026 Afiq | Personal Website 
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById('themeBtn');
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                btn.innerHTML = "🌙 Dark Mode";
+            } else {
+                btn.innerHTML = "☀️ Light Mode";
+            }
+        }
+    </script>
+</body>
+</html>

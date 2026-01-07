@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afiq's Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent-color: #ffcc70;
+            --btn-text: #1f3c88;
+            --header-bg: #1f3c88;
+            --nav-bg: #3a5ba0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #eef2f5;
+            color: #333;
+            /* Global Background Image */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("image/afiq1.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header p {
+            color: #dbe4ff;
+            font-style: italic;
+            font-style: bold;
+        }
+
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: var(--btn-text);
+        }
+
+        .content {
+            padding: 100px 20px;
+            text-align: center;
+            /* Abstract background section */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("image/abstract.png");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 15px;
+        }
+
+        .info-section {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            max-width: 700px;
+            border-radius: 15px;
+            color: #333;
+        }
+
+      
+        .snorlax-gif {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        #mark1 {
+            margin-bottom: 20px;
+            display: block;
+            transition: 0.5s all ease;
+        }
+
+        .btn-custom {
+            background-color: var(--header-bg);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s all ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-color);
+            color: var(--btn-text);
+            box-shadow: 0 0 20px rgba(255, 204, 112, 0.6);
+        }
+
+        footer {
+            background-color: var(--header-bg);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            nav a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // Greeting Alert
+        alert("Peace be upon you.\nWelcome\nto Afiq's Personal Website.");
+    </script>
+
+    <header>
+        <h1>Welcome to My Personal Website</h1>
+        <p>Your insight into my world</p>
+    </header>
+
+    <nav>
+        <a href="saya.html">About Me</a>
+        <a href="keluarga.html">Family</a>
+        <a href="kawan_kawan_2.html">Friends</a>
+        <a href="komander_2.html">Komander Kesatria</a>
+    </nav>
+
+    <div class="content">
+        <h2>Greetings!</h2>
+        <p>
+            Welcome to my digital space. 
+            Please use the navigation menu above to explore my background, 
+            meet my family, or see my activities.
+        </p>
+    </div>
+
+    <div class="info-section">
+        <img src="animation/snorlax.gif" alt="snorlax" class="snorlax-gif">
+        
+        <span id="mark1"><b>MUHAMMAD AFIQ AIMAN BIN MOHD AZAM (2023478334)</b></span>
+        <br>
+        <button type="button" class="btn-custom" onclick="myStyle()">BO</button>
+    </div>
+
+    <script>
+        function myStyle() {
+            var element = document.getElementById("mark1");
+            element.style.fontSize = "25px";
+            element.style.color = "blue";
+            element.style.fontFamily = "Courier New, monospace";
+            element.style.backgroundColor = "#ffffff"; 
+            element.style.padding = "10px";
+            element.style.borderRadius = "10px";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2026 Afiq | Personal Website </p>
+    </footer>
+
+</body>
+</html>
