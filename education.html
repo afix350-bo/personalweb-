@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --khaki-dark: #4b4a31;
+            --khaki-main: #bdb76b; /* Classic Khaki */
+            --khaki-light: #f0e68c;
+            --accent-gold: #d4af37;
+            --bg-color: #f5f5dc; /* Beige background */
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(75, 74, 49, 0.7), rgba(75, 74, 49, 0.7)), url("image/afiq1.jpeg");
+            background-attachment: fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: var(--khaki-dark);
+            color: var(--khaki-light);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-gold);
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            background-color: var(--khaki-dark);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--khaki-light);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--khaki-main);
+            color: var(--khaki-dark);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* --- TIMELINE DESIGN --- */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-gold);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 45%;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            position: relative;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-top: 5px solid var(--khaki-main);
+        }
+
+        .timeline-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 2px solid var(--khaki-light);
+        }
+
+        .timeline-item:nth-child(odd) { float: left; clear: right; text-align: right; }
+        .timeline-item:nth-child(even) { float: right; clear: left; text-align: left; }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--khaki-dark);
+            border: 4px solid var(--accent-gold);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after { right: -63px; }
+        .timeline-item:nth-child(even)::after { left: -63px; }
+
+        .date {
+            font-weight: bold;
+            color: var(--khaki-dark);
+            background: var(--khaki-light);
+            padding: 2px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h3 { margin: 0; color: var(--khaki-dark); }
+        p { font-size: 0.9rem; color: #555; margin-top: 5px; }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            background: var(--khaki-dark);
+            color: var(--khaki-light);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .back-btn:hover { background: var(--khaki-light); color: var(--khaki-dark); }
+
+        footer {
+            background-color: var(--khaki-dark);
+            color: var(--khaki-light);
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        @media (max-width: 750px) {
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 85%; float: right !important; text-align: left !important; }
+            .timeline-item::after { left: -33px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="image/afiq_profile.jpeg" alt="Afiq Aiman" class="profile-img">
+        <h1>Educational Background</h1>
+        <p>A journey of learning and leadership</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="saya.html">About Me</a>
+        <a href="keluarga.html">Family</a>
+        <a href="kawan_kawan_2.html">Friends</a>
+        <a href="komander_2.html">Komander Kesatria</a>
+    </nav>
+
+    <div class="container">
+        <div class="timeline clearfix">
+            
+            <div class="timeline-item">
+                <span class="date">2023 - Present</span>
+                <h3>UiTM Machang</h3>
+                <p>Diploma in Information Systems Management</p>
+                <p><i>Building expertise in data and management.</i></p>
+                <img src="image/machang_campus.jpg" alt="UiTM Machang">
+            </div>
+
+            <div class="timeline-item">
+                <span class="date">2022 - 2023</span>
+                <h3>UiTM Bukit Besi</h3>
+                <p>Pre-Diploma Science (Applied Sciences)</p>
+                <p><i>The foundation of my university life.</i></p>
+                <img src="image/bukit_besi.jpg" alt="UiTM Bukit Besi">
+            </div>
+
+            <div class="timeline-item">
+                <span class="date">2017 - 2021</span>
+                <h3>SMK Tengku Mahmud 2</h3>
+                <p>Completed SPM Examination.</p>
+                <p><i>Active in uniform bodies and leadership roles.</i></p>
+                <img src="image/smktm2.jpeg" alt="High School">
+            </div>
+
+            <div class="timeline-item">
+                <span class="date">2011 - 2016</span>
+                <h3>SK Tengku Mahmud</h3>
+                <p>Completed UPSR Examination.</p>
+                <p><i>Where the interest in technology began.</i></p>
+                <img src="image/sktm.jpeg" alt="Primary School">
+            </div>
+
+        </div>
+
+        <a href="index.html" class="back-btn">⬅ Back to Homepage</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Afiq Aiman | Personal Website </p>
+    </footer>
+
+</body>
+</html>
