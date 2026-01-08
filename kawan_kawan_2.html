@@ -14,8 +14,13 @@
             --text-color: #333;
             --accent-color: #6c8cd5;
             --title-color: #1f3c88;
-            --footer-bg: #112240; /* Darker Navy for contrast */
+            --footer-bg: #112240;
             --footer-text: #ccd6f6;
+            
+            /* BEIGE THEME NAVIGATION (Dark Mode) */
+            --nav-bg: #f5f5dc; 
+            --nav-text: #4a4a4a;
+            --nav-hover: #d2b48c; /* Tan color for hover */
         }
 
         .light-mode {
@@ -26,6 +31,11 @@
             --title-color: #000;
             --footer-bg: #dbe4ff;
             --footer-text: #1f3c88;
+            
+            /* BEIGE THEME NAVIGATION (Light Mode) */
+            --nav-bg: #ece0d1; 
+            --nav-text: #2c2c2c;
+            --nav-hover: #967969;
         }
 
         body {
@@ -41,13 +51,38 @@
             transition: 0.4s;
             display: flex;
             flex-direction: column;
-            align-items: center;
             min-height: 100vh;
+        }
+
+        /* --- UPDATED BEIGE NAVIGATION --- */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: var(--nav-text);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--nav-hover);
+            color: white;
         }
 
         .theme-toggle {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             right: 20px;
             background-color: #ffcc00;
             color: #000;
@@ -98,52 +133,17 @@
 
         .back-btn:hover { transform: scale(1.05); filter: brightness(1.2); }
 
-        /* --- ADVANCED FOOTER STYLES --- */
         footer {
             width: 100%;
             background-color: var(--footer-bg);
             color: var(--footer-text);
-            padding: 50px 0 20px 0;
+            padding: 30px 0;
             margin-top: auto;
             transition: 0.4s;
         }
 
-        .footer-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            padding: 0 20px;
-        }
-
-        .footer-col h3 {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-col p { font-size: 0.9rem; line-height: 1.6; opacity: 0.8; }
-
-        .footer-links { list-style: none; padding: 0; }
-
-        .footer-links li { margin-bottom: 10px; }
-
-        .footer-links a {
-            color: var(--footer-text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover { opacity: 1; color: var(--accent-color); padding-left: 5px; }
-
         .footer-bottom {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.8rem;
             opacity: 0.6;
         }
@@ -151,6 +151,14 @@
 </head>
 
 <body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="saya.html">About Me</a>
+         <a href="education.html">Education</a>
+        <a href="keluarga.html">Family</a>
+        <a href="komander_2.html">Komander Kesatria</a>
+    </nav>
 
     <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Light Mode</button>
 
@@ -171,20 +179,17 @@
         <img src="image/para3.jpeg" alt="ParaOnTop Group">
     </section>
 
- <section class="content">
+    <section class="content">
         <h2>Team Gerai BATALION X</h2>
-        <p>Team Gerai is a group of individuals who work together efficiently to manage and operate a stall successfully.
-</p>
-        <img src="image/team_gerai.jpeg" alt="ParaOnTop Group">
+        <p>Team Gerai is a group of individuals who work together efficiently to manage and operate a stall successfully.</p>
+        <img src="image/team_gerai.jpeg" alt="Team Gerai Group">
     </section>
 
-
     <div class="nav-container">
-        <a href="index.html" class="back-btn">⬅ Back to Main Menu</a>
+        <a href="index.html" class="back-btn">⬅ back to Homepage</a>
     </div>
 
     <footer>
-      
         <div class="footer-bottom">
             &copy; 2026 Afiq | Personal Website 
         </div>

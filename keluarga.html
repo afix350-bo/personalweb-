@@ -14,6 +14,7 @@
             --accent-color: #a3b18a;
             --footer-bg: #3a412f;
             --card-shadow: rgba(0, 0, 0, 0.4);
+            --nav-bg: #282e1d;
         }
 
         .light-mode {
@@ -23,6 +24,7 @@
             --accent-color: #6b705c;
             --footer-bg: #a3b18a;
             --card-shadow: rgba(0, 0, 0, 0.1);
+            --nav-bg: #a3b18a;
         }
 
         body {
@@ -36,10 +38,35 @@
             transition: all 0.5s ease;
         }
 
-        /* --- THEME TOGGLE BUTTON --- */
+        /* --- INTEGRATED NAVIGATION STYLING --- */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--card-shadow);
+        }
+
+        nav a {
+            color: var(--text-color);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
         .theme-toggle {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             right: 20px;
             background-color: var(--accent-color);
             color: var(--bg-color);
@@ -48,13 +75,13 @@
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-            z-index: 1000;
+            z-index: 1100;
             box-shadow: 0 4px 10px var(--card-shadow);
         }
 
         header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         h1 {
@@ -105,26 +132,10 @@
             transition: 0.3s;
         }
 
-        .card img:hover {
-            opacity: 0.8;
-        }
+        h2 { color: var(--accent-color); margin-bottom: 10px; }
+        p { line-height: 1.6; font-size: 1rem; }
 
-        h2 {
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-
-        p {
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        /* --- NAVIGATION --- */
-        .nav-container {
-            text-align: center;
-            margin: 50px 0;
-        }
-
+        .nav-container { text-align: center; margin: 50px 0; }
         .back-link {
             color: var(--accent-color);
             text-decoration: none;
@@ -135,10 +146,7 @@
             transition: 0.3s;
         }
 
-        .back-link:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-        }
+        .back-link:hover { background-color: var(--accent-color); color: var(--bg-color); }
 
         footer {
             background-color: var(--footer-bg);
@@ -147,7 +155,6 @@
             padding: 20px;
         }
 
-        /* --- IMAGE POPUP --- */
         .popup {
             display: none;
             position: fixed;
@@ -161,6 +168,14 @@
     </style>
 </head>
 <body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="saya.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="kawan_kawan_2.html">Friends</a>
+        <a href="komander_2.html">Komander Kesatria</a>
+    </nav>
 
     <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Light Mode</button>
 
@@ -190,7 +205,7 @@
     </div>
 
     <div class="nav-container">
-        <a href="index.html" class="back-link">⬅ Back to Main Page</a>
+        <a href="index.html" class="back-link">⬅ back to Homepage</a>
     </div>
 
     <div class="popup" id="popup" onclick="this.style.display='none'">
@@ -202,20 +217,13 @@
     </footer>
 
     <script>
-        // THEME TOGGLE
         function toggleTheme() {
             const body = document.body;
             const btn = document.getElementById('themeBtn');
             body.classList.toggle('light-mode');
-            
-            if(body.classList.contains('light-mode')) {
-                btn.innerHTML = "🌙 Dark Mode";
-            } else {
-                btn.innerHTML = "☀️ Light Mode";
-            }
+            btn.innerHTML = body.classList.contains('light-mode') ? "🌙 Dark Mode" : "☀️ Light Mode";
         }
 
-        // SCROLL ANIMATION OBSERVER
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -226,7 +234,6 @@
 
         document.querySelectorAll('.card').forEach(card => observer.observe(card));
 
-        // IMAGE POPUP FUNCTIONALITY
         const cards = document.querySelectorAll('.card img');
         const popup = document.getElementById('popup');
         const popupImg = document.getElementById('popupImg');
@@ -238,6 +245,5 @@
             });
         });
     </script>
-
 </body>
 </html>

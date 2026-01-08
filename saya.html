@@ -15,6 +15,7 @@
             --accent-color: #64ffda;
             --footer-bg: #020c1b;
             --btn-text: #0a192f;
+            --nav-bg: #112240;
         }
 
         .light-mode {
@@ -24,6 +25,7 @@
             --accent-color: #2b6cb0;
             --footer-bg: #bee3f8;
             --btn-text: #ffffff;
+            --nav-bg: #2b6cb0;
         }
 
         body {
@@ -37,9 +39,37 @@
             transition: 0.5s ease;
         }
 
+        /* --- NEW NAVIGATION STYLING --- */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--text-color);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: var(--btn-text);
+            border: 1px solid var(--accent-color);
+        }
+
         .theme-toggle {
             position: fixed;
-            top: 20px;
+            bottom: 20px; /* Moved to bottom so it doesn't block nav */
             right: 20px;
             background-color: var(--accent-color);
             color: var(--btn-text);
@@ -54,7 +84,7 @@
 
         .container {
             flex: 1;
-            padding: 80px 20px;
+            padding: 40px 20px; /* Reduced top padding since nav is now at top */
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
@@ -104,7 +134,6 @@
         h2 { color: var(--accent-color); font-size: 1.5rem; margin-top: 20px; }
         h3 { color: var(--text-color); font-size: 1.1rem; margin-top: 15px; border-bottom: 1px solid var(--accent-color); display: inline-block; }
 
-        /* Table Styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -117,32 +146,8 @@
         }
         th { background-color: rgba(100, 255, 218, 0.1); }
 
-        /* Custom Marker Styling */
-        .custom-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        .custom-list li::before {
-            content: "🎸"; 
-            margin-right: 10px;
-        }
-
-        .btn-action {
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 2px solid var(--accent-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        .btn-action:hover {
-            background-color: var(--accent-color);
-            color: var(--btn-text);
-        }
+        .custom-list { list-style: none; padding-left: 0; }
+        .custom-list li::before { content: "🎸"; margin-right: 10px; }
 
         .map-frame {
             width: 100%;
@@ -173,6 +178,14 @@
 </head>
 <body>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="keluarga.html">Family</a>
+        <a href="kawan_kawan_2.html">Friends</a>
+        <a href="komander_2.html">Komander Kesatria</a>
+    </nav>
+
     <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Light Mode</button>
 
     <div class="container">
@@ -189,20 +202,30 @@
             </audio>
         </div>
 
-
         <div class="card">
             <h2>Who Am I?</h2>
+ <address>
+ Muhammad Afiq Aiman bin Mohd Azam <br>
+  Pengajian Sains Maklumat <br>
+  UiTM Cawangan Kelantan <br>
+  019-4293170 <br>
+  afix350@gmail.com <br>
+ </address>
+
+<blockquote cite="https://www.brainyquote.com/quotes/norman_vincent_peale_132560?src=t_motivational">Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.</blockquote>
+ 
             <p>
                 I am an individual deeply passionate about the world of technology, 
                 continuous learning, and personal development. My main focus is 
                 exploring digital potential to benefit society.
             </p>
+
+            <p>My life motto is : <q>Never Give Up</q></p>
         </div>
 
         <div class="card">
             <h2>Interests & Favorites</h2>
-            
-            <h3>Weekly Schedule </h3>
+            <h3>Weekly Schedule</h3>
             <table>
                 <thead>
                     <tr>
@@ -217,7 +240,7 @@
                     </tr>
                     <tr>
                         <td>Weekend</td>
-                        <td>Physical training as Komander & complete the assignment </td>
+                        <td>Physical training as Komander & complete the assignment</td>
                     </tr>
                 </tbody>
             </table>
@@ -226,43 +249,18 @@
             <ul>
                 <li>Web Development & Coding</li>
                 <li>Exploring AI Technologies</li>
-                <li>Gaming </li>
-                <li>Physical training </li>
-            </ul>
-
-            <h3>Top 4 Goals</h3>
-            <ol>
-                <li>Graduate with First Class Honors</li>
-                <li>Master Full-Stack Development</li>
-                <li>Launch a tech-based startup</li>
-                <li>qualification as leftenan Muda Kesatria</li>
-            </ol>
-
-            <h3>Favorite Bands</h3>
-            <ul class="custom-list">
-                <li>HUJAN</li>
-                <li>Bunkface</li>
-                <li>Hindia</li>
-                <li>Sweetas</li>
+                <li>Gaming</li>
+                <li>Physical training</li>
             </ul>
         </div>
 
         <div class="card">
             <h2>My Birthplace</h2>
-            <p>Born at Sultanah Nur Zahirah Hospital (Kuala Terengganu General Hospital).</p>
-            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.4116480826955!2d103.1492211!3d5.3385759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b7bedda6d06d45%3A0xc3f5b721e7d2e7d7!2sHospital%20Sultanah%20Nur%20Zahirah!5e0!3m2!1sen!2smy!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+            <p>Born at Sultanah Nur Zahirah Hospital.</p>
+            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.4286129524675!2d103.1485603!3d5.3359679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b7bd062e245037%3A0xb6d18721c43557e6!2sSultanah%20Nur%20Zahirah%20Hospital!5e0!3m2!1sen!2smy!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-        <div class="card">
-            <h2>Education & Objectives</h2>
-            <p>
-                Currently studying at UiTM, I am active in various leadership activities 
-                while honing my technical skills. My goal is to become a 
-                highly competitive professional in the industry.
-            </p>
-        </div>
-
-        <a href="index.html" class="back-link">⬅ Back to Main Menu</a>
+        <a href="index.html" class="back-link">⬅ back to Homepage</a>
     </div>
 
     <footer>
@@ -275,17 +273,6 @@
             const btn = document.getElementById('themeBtn');
             body.classList.toggle('light-mode');
             btn.innerHTML = body.classList.contains('light-mode') ? "🌙 Dark Mode" : "☀️ Light Mode";
-        }
-
-        function tukarGaya() {
-            var x = document.getElementById("mark1");
-            x.style.fontSize = "22px";
-            x.style.color = "blue";
-            x.style.fontFamily = "Courier New";
-            x.style.backgroundColor = "yellow";
-            x.style.fontWeight = "bold";
-            x.style.padding = "5px";
-            x.style.borderRadius = "5px";
         }
 
         const observer = new IntersectionObserver((entries) => {
